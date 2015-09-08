@@ -2,8 +2,8 @@
 //  ExpandTableVC.m
 //  点击按钮出现下拉列表
 //
-//  Created by 杜甲 on 14-3-26.
-//  Copyright (c) 2014年 杜甲. All rights reserved.
+//  Created by 张亚雄 on 14-3-26.
+//  Copyright (c) 2015年 张亚雄. All rights reserved.
 //
 
 #import "ExpandTableVC.h"
@@ -28,15 +28,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    声明他是一个数组
     self.m_ContentArr = [NSArray array];
     
 
-	 self.view.backgroundColor = [UIColor colorWithRed:167.0f / 255.0f green:255.0f/ 255.0f blue:253.0f/ 255.0f alpha:0.3f];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.view.backgroundColor =[UIColor colorWithRed:167.0f / 255.0f green:255.0f/ 255.0f blue:253.0f/ 255.0f alpha:0.3f];
+//     Uncomment the following line to preserve selection between presentations.
+//     self.clearsSelectionOnViewWillAppear = NO;
+// 
+//     Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+//     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
 
 }
@@ -51,14 +52,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
     return self.m_ContentArr.count;
 }
@@ -74,7 +75,7 @@
     //[cell setCellContentData:[self.m_ContentArr objectAtIndex:indexPath.row]];
 	cell.textLabel.text = [self.m_ContentArr objectAtIndex:indexPath.row];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
-	cell.textLabel.backgroundColor = [UIColor clearColor];
+	cell.textLabel.backgroundColor = [UIColor redColor];
 	
     return cell;
 }

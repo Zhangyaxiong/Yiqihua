@@ -7,12 +7,15 @@
 //
 
 #import "AEArtStudioController.h"
-#import "AE_draw_info_right.h"
+#import "AE_draw_info_left.h"
+#import "Btn_TableView.h"
+
+
 
 
 @interface AEArtStudioController ()
-@end
 
+@end
 @implementation AEArtStudioController
 
 - (void)didReceiveMemoryWarning {
@@ -76,6 +79,10 @@
     self.adList = [[AEAdList alloc] initWithAPIName:[DBNAPIList getAdListAPI] andFrom:0];
     _adList.delegate = self;
     [_adList getadList];
+    [self draw_info_left];
+    
+    m_pullDownView = [[PullDownVIew alloc]initWithFrame:CGRectMake(0, -100, self.view.frame.size.width, 100)];
+    [self.view addSubview:m_pullDownView];
   
 }
 - (void)createAdView
@@ -102,40 +109,47 @@
 }
 -(void)draw_info_left
 {
-    UIView *titleViewBtnRt = [[UIView alloc]initWithFrame:CGRectMake(0, 145, self.view.frame.size.width/2, 71)];
-    [m_adView addSubview:titleViewBtnRt];
-    titleViewBtnRt.backgroundColor = [UIColor clearColor];
+    UIButton *titleViewBtnLt = [[UIButton alloc]initWithFrame:CGRectMake(0, 145, self.view.frame.size.width/2, 71)];
+    
+    titleViewBtnLt.backgroundColor = [UIColor clearColor];
+    
+    [self.view addSubview:titleViewBtnLt];
+    
+    [titleViewBtnLt addTarget:self action:@selector(jump_page) forControlEvents:UIControlEventTouchUpInside];
+    
     UILabel *m_UIbutText = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 150, 75, 40)];
     m_UIbutText.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     m_UIbutText.text = @"画室资讯";
     m_UIbutText.textColor = [UIColor blackColor];
-    [m_adView addSubview:m_UIbutText];
+    
     
     UILabel *m_UIbutTextD = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 170, 75, 40)];
     m_UIbutTextD.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
     m_UIbutTextD.text = @"画室最新动态";
     m_UIbutTextD.textColor = [UIColor grayColor];
-    [m_adView addSubview:m_UIbutTextD];
+    
     //    图片
     UIImageView *imageViewBtn = [[UIImageView alloc] initWithFrame:CGRectMake(15, 152, 55, 55)];
     imageViewBtn.image = [UIImage imageNamed:@"01"];
+    [m_adView addSubview:m_UIbutText];
+    [m_adView addSubview:m_UIbutTextD];
     [m_adView addSubview:imageViewBtn];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self action:nil];
-   [(UIView*) titleViewBtnRt addGestureRecognizer:tap];
-//  [self.navigationController pushViewController:titleViewBtnRt animated:YES];
+    
 }
 -(void)draw_info_right
 {
     
-    UIView *titleViewBtnLf = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+5, 145, self.view.frame.size.width/2, 71)];
-    [m_adView addSubview:titleViewBtnLf];
-    titleViewBtnLf.backgroundColor = [UIColor clearColor];
-    UILabel *m_UIbutTextLf = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 150, 75, 40)];
-    m_UIbutTextLf.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
-    m_UIbutTextLf.text = @"画室省份";
-    m_UIbutTextLf.textColor = [UIColor blackColor];
-    [m_adView addSubview:m_UIbutTextLf];
+    UIView *titleViewBtnRf = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+5, 145, self.view.frame.size.width/2, 71)];
+    [m_adView addSubview:titleViewBtnRf];
+    
+    titleViewBtnRf.backgroundColor = [UIColor clearColor];
+    
+    UILabel *m_UIbutTextRf = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 150, 75, 40)];
+    
+    m_UIbutTextRf.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+    m_UIbutTextRf.text = @"画室省份";
+    m_UIbutTextRf.textColor = [UIColor blackColor];
+    [m_adView addSubview:m_UIbutTextRf];
     UILabel *m_UIbutTextL = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 170, 75, 40)];
     m_UIbutTextL.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
     m_UIbutTextL.text = @"画室最新动态";
@@ -146,6 +160,18 @@
     imageViewBtnLf.image = [UIImage imageNamed:@"02"];
     [m_adView addSubview:imageViewBtnLf];
   
+}
+-(void)jump_page
+{
+    AE_draw_info_left *infoLeft =[[AE_draw_info_left alloc]init];
+    infoLeft.title =@"画室资讯";
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:infoLeft animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
+-(void)pull_down_but
+{
+    
 }
 //添加搜索按钮
 - (void)addNavigationRightItemSearch
@@ -180,15 +206,41 @@
     titleView.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleView;
     
-    UILabel *areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
+    UIImageView *imageViewtitle = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2+40, 14, 13, 12)];
+    
+    imageViewtitle.image = [UIImage imageNamed:@"find_pulldown.png"];
+    
+    UILabel *areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-40, 0, 80, 40)];
     areaLabel.backgroundColor = [UIColor clearColor];
     areaLabel.textColor = [UIColor whiteColor];
     areaLabel.textAlignment = NSTextAlignmentCenter;
     areaLabel.font = [UIFont systemFontOfSize:20.f];
     areaLabel.text = @"画室精选";
+    [titleView addSubview:imageViewtitle];
     [titleView addSubview:areaLabel];
+    //给label添加一个点击事件手势
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSelectProvinceView)];
+    [titleView addGestureRecognizer:tapGes];
+    
 }
-- (void)showAdvertisInfo{
+- (void)tapSelectProvinceView
+{
+    NSLog(@"tapSelectProvinceView");
+    [UIView animateWithDuration:0.2 animations:^{
+        if(m_pullDownView.frame.origin.y == -100)
+        {
+            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, 100);
+            m_pullDownView.frame = frame;
+        }
+        else if(m_pullDownView.frame.origin.y == 0) {
+            CGRect frame = CGRectMake(0, -100, self.view.frame.size.width, 100);
+            m_pullDownView.frame = frame;
+        }
+        
+    }];
+}
+- (void)showAdvertisInfo
+{
     m_adTitleLabel.textColor = [DBNUtils getColor:@"33363B"];
     if ([_adList.adAry count] > 0) {
         m_adTitleLabel.text = [[_adList.adAry objectAtIndex:0] descStr];
@@ -285,7 +337,8 @@
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
         return CGSizeMake(self.view.frame.size.width, 130);
     }else
     {

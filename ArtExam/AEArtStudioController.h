@@ -26,6 +26,7 @@
 #import "DBNWebViewController.h"
 #import "AEArtStudioDetailEViewController.h"
 
+#import "PullDownVIew.h"
 
 @interface AEArtStudioController : DBNViewController<UICollectionViewDataSource,UICollectionViewDelegate,DBNDataEntriesDelegate>
 {
@@ -36,6 +37,8 @@
     NSMutableArray *m_arrStudioList;
     UIPageControl *m_pageControl;
     PullCollectionView *m_collectionView;
+    
+    PullDownVIew *m_pullDownView;
 }
 @property (nonatomic, strong) AEAdList *adList;
 @end

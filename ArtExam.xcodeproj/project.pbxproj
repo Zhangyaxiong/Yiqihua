@@ -203,10 +203,10 @@
 		25EC9A2819CDB1A60071C8EB /* AEWorkGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EC9A2719CDB1A60071C8EB /* AEWorkGridCell.m */; };
 		3A7645671B5A4FF700054F97 /* AEExamNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7645651B5A4FF700054F97 /* AEExamNewsCell.m */; };
 		3A7645681B5A4FF700054F97 /* AEExamNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7645661B5A4FF700054F97 /* AEExamNewsCell.xib */; };
+		69BF470C1B85A1D300734C60 /* AE_draw_info_left.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */; };
+		69C6C4C51B9EABAC00494386 /* PullDownVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C6C4C41B9EABAC00494386 /* PullDownVIew.m */; };
 		69FE5A671B846BF1007200F3 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 69FE5A661B846BF1007200F3 /* 01.png */; };
 		69FE5A691B846BF5007200F3 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 69FE5A681B846BF5007200F3 /* 02.png */; };
-		69FE5A6D1B847FD6007200F3 /* AE_draw_info_left.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FE5A6C1B847FD6007200F3 /* AE_draw_info_left.m */; };
-		69FE5A701B848077007200F3 /* AE_draw_info_right.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FE5A6F1B848077007200F3 /* AE_draw_info_right.m */; };
 		74C8A1A61B78A0CE00779291 /* tab-studio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C8A1A51B78A0CE00779291 /* tab-studio@2x.png */; };
 		74C8A1A81B78A10B00779291 /* tab-studio-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C8A1A71B78A10B00779291 /* tab-studio-selected@2x.png */; };
 		74C8A1AC1B7AE28400779291 /* AEStudioCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C8A1AB1B7AE28400779291 /* AEStudioCollectionViewCell.m */; };
@@ -793,12 +793,12 @@
 		3A7645641B5A4FF700054F97 /* AEExamNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEExamNewsCell.h; sourceTree = "<group>"; };
 		3A7645651B5A4FF700054F97 /* AEExamNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEExamNewsCell.m; sourceTree = "<group>"; };
 		3A7645661B5A4FF700054F97 /* AEExamNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AEExamNewsCell.xib; sourceTree = "<group>"; };
+		69BF470A1B85A1D300734C60 /* AE_draw_info_left.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AE_draw_info_left.h; sourceTree = "<group>"; };
+		69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AE_draw_info_left.m; sourceTree = "<group>"; };
+		69C6C4C31B9EABAC00494386 /* PullDownVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownVIew.h; sourceTree = "<group>"; };
+		69C6C4C41B9EABAC00494386 /* PullDownVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownVIew.m; sourceTree = "<group>"; };
 		69FE5A661B846BF1007200F3 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01.png; path = "../../照片/01.png"; sourceTree = "<group>"; };
 		69FE5A681B846BF5007200F3 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 02.png; path = "../../照片/02.png"; sourceTree = "<group>"; };
-		69FE5A6B1B847FD6007200F3 /* AE_draw_info_left.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AE_draw_info_left.h; sourceTree = "<group>"; };
-		69FE5A6C1B847FD6007200F3 /* AE_draw_info_left.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AE_draw_info_left.m; sourceTree = "<group>"; };
-		69FE5A6E1B848077007200F3 /* AE_draw_info_right.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AE_draw_info_right.h; sourceTree = "<group>"; };
-		69FE5A6F1B848077007200F3 /* AE_draw_info_right.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AE_draw_info_right.m; sourceTree = "<group>"; };
 		74C8A1A21B74BBF600779291 /* AEArtStudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEArtStudioController.h; sourceTree = "<group>"; };
 		74C8A1A31B74BBF600779291 /* AEArtStudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEArtStudioController.m; sourceTree = "<group>"; };
 		74C8A1A51B78A0CE00779291 /* tab-studio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-studio@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -2100,9 +2100,19 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		69FB216B1B85DD0100E626B7 /* ExpandBtn */ = {
+			isa = PBXGroup;
+			children = (
+				69C6C4C31B9EABAC00494386 /* PullDownVIew.h */,
+				69C6C4C41B9EABAC00494386 /* PullDownVIew.m */,
+			);
+			name = ExpandBtn;
+			sourceTree = "<group>";
+		};
 		74C8A1A11B74B6DC00779291 /* ArtStudio */ = {
 			isa = PBXGroup;
 			children = (
+				69FB216B1B85DD0100E626B7 /* ExpandBtn */,
 				74C8A1AD1B7AEB2B00779291 /* ParseJson.h */,
 				74C8A1AE1B7AEB2B00779291 /* ParseJson.m */,
 				74C8A1A21B74BBF600779291 /* AEArtStudioController.h */,
@@ -2111,10 +2121,8 @@
 				74C8A1AB1B7AE28400779291 /* AEStudioCollectionViewCell.m */,
 				74C8A1B51B7CC47B00779291 /* AEArtStudioDetailEViewController.h */,
 				74C8A1B61B7CC47B00779291 /* AEArtStudioDetailEViewController.m */,
-				69FE5A6B1B847FD6007200F3 /* AE_draw_info_left.h */,
-				69FE5A6C1B847FD6007200F3 /* AE_draw_info_left.m */,
-				69FE5A6E1B848077007200F3 /* AE_draw_info_right.h */,
-				69FE5A6F1B848077007200F3 /* AE_draw_info_right.m */,
+				69BF470A1B85A1D300734C60 /* AE_draw_info_left.h */,
+				69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */,
 				69FE5A661B846BF1007200F3 /* 01.png */,
 				69FE5A681B846BF5007200F3 /* 02.png */,
 			);
@@ -2633,7 +2641,6 @@
 				250FB52119C090C600ECB139 /* AETopicListCell.m in Sources */,
 				87E96AAA1B02379A003299F0 /* AEExamNewsList.m in Sources */,
 				250FB56219C1DCF000ECB139 /* AEStudioDetailsController.m in Sources */,
-				69FE5A6D1B847FD6007200F3 /* AE_draw_info_left.m in Sources */,
 				87135FCB1B49041400D6A340 /* AEAdmissionsViewController.m in Sources */,
 				87135FC21B4903B900D6A340 /* AEAdmissionsList.m in Sources */,
 				25B2221719C87A5400D97FFD /* DBNActionBarButton.m in Sources */,
@@ -2699,6 +2706,7 @@
 				8F88400F19C1F883006D15D1 /* AEHotMajorController.m in Sources */,
 				8F7AB97219D066080094D4F9 /* AEUserCenter.m in Sources */,
 				25762C9319C3F1FC00C7E7D8 /* DBNDataEntries.m in Sources */,
+				69C6C4C51B9EABAC00494386 /* PullDownVIew.m in Sources */,
 				25CC4DD119CED28400F6D81E /* M80AttributedLabelURL.m in Sources */,
 				8F812AD419E7CCD500726938 /* AEAboutUsVC.m in Sources */,
 				8F0F3C4819C3328A0003F411 /* SYDLSetCell.m in Sources */,
@@ -2760,6 +2768,7 @@
 				25EC99FE19CD34300071C8EB /* AECircleCell.m in Sources */,
 				25E145E319B5DDFD00F99702 /* UIGestureRecognizer+GMGridViewAdditions.m in Sources */,
 				25762CA519C435A300C7E7D8 /* AEQuestion.m in Sources */,
+				69BF470C1B85A1D300734C60 /* AE_draw_info_left.m in Sources */,
 				8FF9C93619B9C547004830C7 /* MessageInterceptor.m in Sources */,
 				25B2221D19C8822D00D97FFD /* AECommentList.m in Sources */,
 				25EC99E519CD17190071C8EB /* MMDrawerController.m in Sources */,
@@ -2811,7 +2820,6 @@
 				74C8A1B41B7B44FD00779291 /* PullCollectionView.m in Sources */,
 				8F7BCF4019D5BBE0001EA795 /* AEAreaView.m in Sources */,
 				25EC9A0819CD9CD20071C8EB /* AEStudio.m in Sources */,
-				69FE5A701B848077007200F3 /* AE_draw_info_right.m in Sources */,
 				8F883FF019C1A684006D15D1 /* AETeacherDetailCell.m in Sources */,
 				8FB801B319E5831200DEB056 /* AEAdvertisement.m in Sources */,
 				25E145E019B5DDFD00F99702 /* GMGridView.m in Sources */,
@@ -2907,7 +2915,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
@@ -2941,7 +2949,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

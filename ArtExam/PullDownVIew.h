@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PullDownVIew : UIScrollView<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface PullDownVIew : UIView<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 {
     
 }

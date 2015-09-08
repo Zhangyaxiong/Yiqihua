@@ -8,6 +8,7 @@
 
 #import "AEArtStudioController.h"
 #import "AE_draw_info_left.h"
+#import "AE_draw_info_right.h"
 #import "Btn_TableView.h"
 
 
@@ -81,7 +82,7 @@
     [_adList getadList];
     [self draw_info_left];
     
-    m_pullDownView = [[PullDownVIew alloc]initWithFrame:CGRectMake(0, -100, self.view.frame.size.width, 100)];
+    m_pullDownView = [[PullDownVIew alloc]initWithFrame:CGRectMake(0, -330, self.view.frame.size.width, 100)];
     [self.view addSubview:m_pullDownView];
   
 }
@@ -115,7 +116,7 @@
     
     [self.view addSubview:titleViewBtnLt];
     
-    [titleViewBtnLt addTarget:self action:@selector(jump_page) forControlEvents:UIControlEventTouchUpInside];
+    [titleViewBtnLt addTarget:self action:@selector(jump_page_left) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *m_UIbutText = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 150, 75, 40)];
     m_UIbutText.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
@@ -138,30 +139,38 @@
 }
 -(void)draw_info_right
 {
-    
-    UIView *titleViewBtnRf = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+5, 145, self.view.frame.size.width/2, 71)];
-    [m_adView addSubview:titleViewBtnRf];
-    
+    UIButton *titleViewBtnRf = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+5, 145, self.view.frame.size.width/2, 71)];
     titleViewBtnRf.backgroundColor = [UIColor clearColor];
     
-    UILabel *m_UIbutTextRf = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 150, 75, 40)];
     
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSelectProvinceView)];
+   
+    
+    UILabel *m_UIbutTextRf = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 150, 75, 40)];
     m_UIbutTextRf.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     m_UIbutTextRf.text = @"画室省份";
     m_UIbutTextRf.textColor = [UIColor blackColor];
-    [m_adView addSubview:m_UIbutTextRf];
+    
+    
     UILabel *m_UIbutTextL = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 170, 75, 40)];
     m_UIbutTextL.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
-    m_UIbutTextL.text = @"画室最新动态";
+    m_UIbutTextL.text = @"按省份找画室";
     m_UIbutTextL.textColor = [UIColor grayColor];
-    [m_adView addSubview:m_UIbutTextL];
+    
     //    图片
     UIImageView *imageViewBtnLf = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2+5+15, 152, 55, 55)];
     imageViewBtnLf.image = [UIImage imageNamed:@"02"];
+    [self.view addGestureRecognizer:tapGes];
+    [self.view addSubview:titleViewBtnRf];
+    [m_adView addSubview: m_UIbutTextRf];
+    [m_adView addSubview:m_UIbutTextL];
     [m_adView addSubview:imageViewBtnLf];
-  
+
+    
+
 }
--(void)jump_page
+-(void)jump_page_left
 {
     AE_draw_info_left *infoLeft =[[AE_draw_info_left alloc]init];
     infoLeft.title =@"画室资讯";
@@ -169,7 +178,6 @@
     [self.navigationController pushViewController:infoLeft animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
-
 //添加搜索按钮
 - (void)addNavigationRightItemSearch
 {
@@ -220,17 +228,18 @@
     [titleView addGestureRecognizer:tapGes];
     
 }
+//点击事件
 - (void)tapSelectProvinceView
 {
     NSLog(@"tapSelectProvinceView");
     [UIView animateWithDuration:0.2 animations:^{
-        if(m_pullDownView.frame.origin.y == -100)
+        if(m_pullDownView.frame.origin.y == -330)
         {
             CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             m_pullDownView.frame = frame;
         }
         else if(m_pullDownView.frame.origin.y == 0) {
-            CGRect frame = CGRectMake(0, -100, self.view.frame.size.width, 100);
+            CGRect frame = CGRectMake(0, -330, self.view.frame.size.width, 100);
             m_pullDownView.frame = frame;
         }
         
@@ -245,7 +254,8 @@
 
     m_pageControl.numberOfPages = [self.adList.adAry count];
     
-    for (int i = 0; i < [self.adList.adAry count]; i++) {
+    for (int i = 0; i < [self.adList.adAry count]; i++)
+    {
         AEAdvertisement *ad = [self.adList.adAry objectAtIndex:i];
         NSString *url = ad.imgUrl;
         if (url != nil) {

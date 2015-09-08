@@ -40,7 +40,7 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
     
     [self addSubview:self.collectionView];
-    self.scrollviewArray = @[@"北京", @"天津",@"上海",@"重庆",@"黑龙江",@"吉林",@"辽宁",@"内蒙古",@"河北",@"山东",@"江苏",@"浙江",@"福建",@"台湾",@"广东",@"江西",@"湖南",@"安徽",@"湖北",@"河南",@"山西",@"宁夏",@"陕西",@"甘肃",@"青海",@"四川",@"贵州",@"云南",@"广西",@"西藏",@"新疆"];
+    self.scrollviewArray = @[@"北京市", @"天津市",@"上海市",@"重庆市",@"黑龙江",@"吉林省",@"辽宁省",@"内蒙古",@"河北省",@"山东省",@"江苏省",@"浙江省",@"福建省",@"台湾省",@"广东省",@"江西省",@"湖南省",@"安徽省",@"湖北省",@"河南省",@"山西省",@"宁夏",@"陕西省",@"甘肃省",@"青海省",@"四川省",@"贵州省",@"云南省",@"广西",@"西藏",@"新疆"];
 }
 //定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -84,6 +84,7 @@
 //    [labelBtn.layer setBorderColor:[UIColor grayColor].CGColor];//边框颜色
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(17, 2, 110, 30)];
     label.textColor = [UIColor blackColor];
+
     label.text =[self.scrollviewArray objectAtIndex:[indexPath row]];
     label.backgroundColor =[UIColor colorWithRed:221.0 green:219.0 blue:218.0 alpha:0.7];
     [labelBtn addSubview:label ];

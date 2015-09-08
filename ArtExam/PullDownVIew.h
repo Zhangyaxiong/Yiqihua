@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PullDownVIew : UIScrollView
+@interface PullDownVIew : UIScrollView<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+{
+    
+}
+@property (strong, nonatomic)UICollectionView *collectionView;
+
+@property (nonatomic,strong) NSString *cellString;
+@property (nonatomic,retain) NSArray *scrollviewArray;
+
 - (id)initWithFrame:(CGRect)frame;
+
 @end

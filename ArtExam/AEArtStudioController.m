@@ -169,10 +169,7 @@
     [self.navigationController pushViewController:infoLeft animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
--(void)pull_down_but
-{
-    
-}
+
 //添加搜索按钮
 - (void)addNavigationRightItemSearch
 {
@@ -229,7 +226,7 @@
     [UIView animateWithDuration:0.2 animations:^{
         if(m_pullDownView.frame.origin.y == -100)
         {
-            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, 100);
+            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             m_pullDownView.frame = frame;
         }
         else if(m_pullDownView.frame.origin.y == 0) {

@@ -30,9 +30,9 @@
 }
 - (BOOL) setCellInfo :(NSDictionary *)dicInfo
 {
-    self.studioNameLabel = [self InitLabel:CGRectMake(5, 105+71, self.frame.size.width-10, 25) :[dicInfo objectForKey:@"name"] :16 :false];
-    self.studioTypeLabel = [self InitLabel:CGRectMake(5, 130+71, self.frame.size.width-10, 20) :[dicInfo objectForKey:@"type"] :14 :true];
-    self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(0,0+71,self.frame.size.width, 100)];
+    self.studioNameLabel = [self InitLabel:CGRectMake(5, 105, self.frame.size.width-10, 25) :[dicInfo objectForKey:@"name"] :16 :false];
+    self.studioTypeLabel = [self InitLabel:CGRectMake(5, 130, self.frame.size.width-10, 20) :[dicInfo objectForKey:@"type"] :14 :true];
+    self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(0,0,self.frame.size.width, 100)];
     NSString *str_img_url = [NSString stringWithFormat:@"http://www.yiqihua.cn/artbox/sys/idownload.do?fileid=%@",[dicInfo objectForKey:@"cover"]];
     NSURL *imgUrl = [NSURL URLWithString:str_img_url];
     [self.imageview setImageWithURL:imgUrl  placeholderImage:nil];

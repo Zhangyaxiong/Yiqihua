@@ -41,7 +41,7 @@
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.minimumInteritemSpacing = 10;
-    m_collectionView = [[PullCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 115) collectionViewLayout:layout];
+    m_collectionView = [[PullCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64) collectionViewLayout:layout];
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
     m_collectionView.pullCollectionDelegate = self;
@@ -103,6 +103,7 @@
 //  字
     m_adTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(14, 121, self.view.frame.size.width-28, 21)];
     [m_adView addSubview:m_adTitleLabel];
+   
     
     [self draw_info_left];
     [self draw_info_right];
@@ -114,7 +115,7 @@
     
     titleViewBtnLt.backgroundColor = [UIColor clearColor];
     
-    [self.view addSubview:titleViewBtnLt];
+  
     
     [titleViewBtnLt addTarget:self action:@selector(jump_page_left) forControlEvents:UIControlEventTouchUpInside];
     
@@ -132,6 +133,7 @@
     //    图片
     UIImageView *imageViewBtn = [[UIImageView alloc] initWithFrame:CGRectMake(15, 152, 55, 55)];
     imageViewBtn.image = [UIImage imageNamed:@"01"];
+    [m_adView addSubview:titleViewBtnLt];
     [m_adView addSubview:m_UIbutText];
     [m_adView addSubview:m_UIbutTextD];
     [m_adView addSubview:imageViewBtn];
@@ -139,14 +141,8 @@
 }
 -(void)draw_info_right
 {
-    UIButton *titleViewBtnRf = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+5, 145, self.view.frame.size.width/2, 71)];
-    titleViewBtnRf.backgroundColor = [UIColor clearColor];
     
-    
-    
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSelectProvinceView)];
-   
-    
+    UIButton *titleViewBtnRf = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2, 145, self.view.frame.size.width/2, 71)];
     UILabel *m_UIbutTextRf = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 150, 75, 40)];
     m_UIbutTextRf.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     m_UIbutTextRf.text = @"画室省份";
@@ -161,15 +157,19 @@
     //    图片
     UIImageView *imageViewBtnLf = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2+5+15, 152, 55, 55)];
     imageViewBtnLf.image = [UIImage imageNamed:@"02"];
-    [self.view addGestureRecognizer:tapGes];
-    [self.view addSubview:titleViewBtnRf];
+    
+
+   [titleViewBtnRf addTarget:self action:@selector(tapSelectProvinceView) forControlEvents:UIControlEventTouchUpInside];
+
+    [m_adView addSubview:titleViewBtnRf];
     [m_adView addSubview: m_UIbutTextRf];
-    [m_adView addSubview:m_UIbutTextL];
-    [m_adView addSubview:imageViewBtnLf];
+    [m_adView  addSubview:m_UIbutTextL];
+    [m_adView  addSubview:imageViewBtnLf];
 
     
 
 }
+//转跳页面标题和转跳事件
 -(void)jump_page_left
 {
     AE_draw_info_left *infoLeft =[[AE_draw_info_left alloc]init];
@@ -203,7 +203,7 @@
     [super initNavItem];
     [self titleView];
 }
-
+//标题菜单下拉
 - (void)titleView
 {
     
@@ -293,7 +293,8 @@
     return 1;
 }
 #pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
@@ -325,7 +326,7 @@
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
         if (cell == nil)
         {
-            cell = [[UICollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 130)];
+            cell = [[UICollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 190)];
         }
         [cell addSubview:m_adView];
         return cell;
@@ -335,9 +336,9 @@
         AEStudioCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
         if (cell == nil)
         {
-            cell = [[AEStudioCollectionViewCell alloc]initWithFrame:CGRectMake(5, 0, self.view.frame.size.width/2-10, 145)];
+            cell = [[AEStudioCollectionViewCell alloc]initWithFrame:CGRectMake(5, 0, self.view.frame.size.width/2-10, 130)];
         }
-        
+       
         [cell setCellInfo:[m_arrStudioList objectAtIndex:(indexPath.row - 1)]];
         return cell;
     }
@@ -346,10 +347,10 @@
 {
     if (indexPath.row == 0)
     {
-        return CGSizeMake(self.view.frame.size.width, 130);
+        return CGSizeMake(self.view.frame.size.width, 190);
     }else
     {
-        return CGSizeMake(self.view.frame.size.width/2 - 10,145);
+        return CGSizeMake(self.view.frame.size.width/2 - 10,150);
     }
     
 }
@@ -368,12 +369,15 @@
 //选中collectionviewcell的触发事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *dic_info = [m_arrStudioList objectAtIndex:indexPath.row-1];
-    AEArtStudioDetailEViewController *viewController = [[AEArtStudioDetailEViewController alloc]initWithStudioInfoDictionary:dic_info];
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-}
+    if (indexPath.row > 0) {
+        NSDictionary *dic_info = [m_arrStudioList objectAtIndex:indexPath.row-1];
+        AEArtStudioDetailEViewController *viewController = [[AEArtStudioDetailEViewController alloc]initWithStudioInfoDictionary:dic_info];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+
+    }
+    }
 #pragma mark - PullCollectionViewDelegate
 - (void)pullCollectionViewDidTriggerRefresh:(PullCollectionView*)pullCollectionView
 {

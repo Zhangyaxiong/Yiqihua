@@ -114,6 +114,8 @@
     AE_draw_info_right *infoLeft =[[AE_draw_info_right alloc]init];
     infoLeft.title =@"画室";
     m_studio_control.hidesBottomBarWhenPushed = YES;
+        //把跳转事件和下拉回撤事件放到返回按钮上。
+    [m_studio_control tapSelectProvinceView];
     [m_studio_control.navigationController pushViewController:infoLeft animated:true];
     m_studio_control.hidesBottomBarWhenPushed = NO;
 }

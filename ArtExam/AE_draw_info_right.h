@@ -10,6 +10,6 @@
 
 @interface AE_draw_info_right : UIViewController
 {
-    
+//   事件一样参数不一样就行。
 }
 @end

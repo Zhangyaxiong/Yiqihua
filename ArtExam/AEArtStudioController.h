@@ -41,4 +41,5 @@
     PullDownVIew *m_pullDownView;
 }
 @property (nonatomic, strong) AEAdList *adList;
+- (void)tapSelectProvinceView;
 @end

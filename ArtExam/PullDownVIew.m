@@ -7,19 +7,22 @@
 //
 
 #import "PullDownVIew.h"
-
+#import "AE_draw_info_right.h"
+#import "AEArtStudioController.h"
 @interface PullDownVIew ()
 @end
 @implementation PullDownVIew
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame :(AEArtStudioController *)studio_control
 {
     self = [super initWithFrame:frame];
     if (self)
     {
+        m_studio_control = studio_control;
         self.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.5];
         [self collectionView_pull];
-        
+        self.scrollviewArray = @[@"北京市", @"天津市",@"上海市",@"重庆市",@"黑龙江",@"吉林省",@"辽宁省",@"内蒙古",@"河北省",@"山东省",@"江苏省",@"浙江省",@"福建省",@"台湾省",@"广东省",@"江西省",@"湖南省",@"安徽省",@"湖北省",@"河南省",@"山西省",@"宁夏",@"陕西省",@"甘肃省",@"青海省",@"四川省",@"贵州省",@"云南省",@"广西",@"西藏",@"新疆"];
+     
     
     }
     return self;
@@ -34,14 +37,13 @@
     self.collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 330) collectionViewLayout:flowLayout];
     self.collectionView.dataSource=self;
     self.collectionView.delegate=self;
-    [self.collectionView setBackgroundColor:[UIColor colorWithRed:250.0 green:250.0 blue:250.0 alpha:0.95]];
+    [self.collectionView setBackgroundColor:[UIColor colorWithRed:250.0 green:250.0 blue:250.0 alpha:0.9]];
     
     //注册Cell，必须要有
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
     
     [self addSubview:self.collectionView];
-    self.scrollviewArray = @[@"北京市", @"天津市",@"上海市",@"重庆市",@"黑龙江",@"吉林省",@"辽宁省",@"内蒙古",@"河北省",@"山东省",@"江苏省",@"浙江省",@"福建省",@"台湾省",@"广东省",@"江西省",@"湖南省",@"安徽省",@"湖北省",@"河南省",@"山西省",@"宁夏",@"陕西省",@"甘肃省",@"青海省",@"四川省",@"贵州省",@"云南省",@"广西",@"西藏",@"新疆"];
-}
+    }
 //定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -67,7 +69,7 @@
     
     UIButton *labelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     //    按钮位置
-    labelBtn.frame = CGRectMake(0, 18, 85, 30);
+    labelBtn.frame = CGRectMake(0, 0, 85, 30);
     
     [labelBtn setTitle:@"" forState:UIControlStateNormal];
     
@@ -80,12 +82,13 @@
     [labelBtn.layer setMasksToBounds:YES];
     [labelBtn.layer setCornerRadius:3.0]; //设置矩形四个圆角半径
     
-//    [labelBtn.layer setBorderWidth:1.0]; //边框宽度
-//    [labelBtn.layer setBorderColor:[UIColor grayColor].CGColor];//边框颜色
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(17, 2, 110, 30)];
+    [labelBtn addTarget:self action:@selector(jump_city) forControlEvents:UIControlEventTouchUpInside];
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(17, 2, 60, 30)];
     label.textColor = [UIColor blackColor];
 
     label.text =[self.scrollviewArray objectAtIndex:[indexPath row]];
+    
     label.backgroundColor =[UIColor colorWithRed:221.0 green:219.0 blue:218.0 alpha:0.7];
     [labelBtn addSubview:label ];
     
@@ -106,6 +109,18 @@
     //    上坐下有
 }
 
+-(void)jump_city//点击转跳翻页
+{
+    AE_draw_info_right *infoLeft =[[AE_draw_info_right alloc]init];
+    infoLeft.title =@"画室";
+    m_studio_control.hidesBottomBarWhenPushed = YES;
+    [m_studio_control.navigationController pushViewController:infoLeft animated:true];
+    m_studio_control.hidesBottomBarWhenPushed = NO;
+}
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+//{
+//    
+//}
 @end
 
 

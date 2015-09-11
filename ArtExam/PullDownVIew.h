@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PullDownVIew : UIView<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@class AEArtStudioController;
+@interface PullDownVIew : UIView<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
-    
+    AEArtStudioController *m_studio_control;
 }
-@property (strong, nonatomic)UICollectionView *collectionView;
 
+@property (strong, nonatomic)UICollectionView *collectionView;
 @property (nonatomic,strong) NSString *cellString;
 @property (nonatomic,retain) NSArray *scrollviewArray;
 
-- (id)initWithFrame:(CGRect)frame;
+-(id)initWithFrame:(CGRect)frame :(AEArtStudioController *)studio_control;
 
 @end

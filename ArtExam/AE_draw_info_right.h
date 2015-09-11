@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AE_draw_info_right : UIViewController
-
+{
+    
+}
 @end

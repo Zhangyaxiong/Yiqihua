@@ -203,6 +203,7 @@
 		25EC9A2819CDB1A60071C8EB /* AEWorkGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EC9A2719CDB1A60071C8EB /* AEWorkGridCell.m */; };
 		3A7645671B5A4FF700054F97 /* AEExamNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7645651B5A4FF700054F97 /* AEExamNewsCell.m */; };
 		3A7645681B5A4FF700054F97 /* AEExamNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7645661B5A4FF700054F97 /* AEExamNewsCell.xib */; };
+		69964B5E1BA15C2E00F2982A /* ParseDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 69964B5D1BA15C2E00F2982A /* ParseDown.m */; };
 		69BF470C1B85A1D300734C60 /* AE_draw_info_left.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */; };
 		69C6C4C51B9EABAC00494386 /* PullDownVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C6C4C41B9EABAC00494386 /* PullDownVIew.m */; };
 		69C6C4CE1B9ECB1A00494386 /* AE_draw_info_right.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C6C4CD1B9ECB1A00494386 /* AE_draw_info_right.m */; };
@@ -794,6 +795,8 @@
 		3A7645641B5A4FF700054F97 /* AEExamNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEExamNewsCell.h; sourceTree = "<group>"; };
 		3A7645651B5A4FF700054F97 /* AEExamNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEExamNewsCell.m; sourceTree = "<group>"; };
 		3A7645661B5A4FF700054F97 /* AEExamNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AEExamNewsCell.xib; sourceTree = "<group>"; };
+		69964B5C1BA15C2E00F2982A /* ParseDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseDown.h; sourceTree = "<group>"; };
+		69964B5D1BA15C2E00F2982A /* ParseDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDown.m; sourceTree = "<group>"; };
 		69BF470A1B85A1D300734C60 /* AE_draw_info_left.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AE_draw_info_left.h; sourceTree = "<group>"; };
 		69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AE_draw_info_left.m; sourceTree = "<group>"; };
 		69C6C4C31B9EABAC00494386 /* PullDownVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownVIew.h; sourceTree = "<group>"; };
@@ -2108,6 +2111,8 @@
 			children = (
 				69C6C4C31B9EABAC00494386 /* PullDownVIew.h */,
 				69C6C4C41B9EABAC00494386 /* PullDownVIew.m */,
+				69964B5C1BA15C2E00F2982A /* ParseDown.h */,
+				69964B5D1BA15C2E00F2982A /* ParseDown.m */,
 			);
 			name = ExpandBtn;
 			sourceTree = "<group>";
@@ -2753,6 +2758,7 @@
 				8F6F11FE19CDCCC50013014D /* AEHotMajorList.m in Sources */,
 				25E1463719B60AF300F99702 /* AETopicListController.m in Sources */,
 				8F883FEB19C1A5A9006D15D1 /* AETeachersDetailController.m in Sources */,
+				69964B5E1BA15C2E00F2982A /* ParseDown.m in Sources */,
 				250FB52519C0910E00ECB139 /* AETopicListTableView.m in Sources */,
 				250FB53319C09C9F00ECB139 /* AETopicDetailsController.m in Sources */,
 				25E1461719B6083B00F99702 /* DBNImageUploadItem.m in Sources */,
@@ -2921,7 +2927,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
@@ -2955,7 +2961,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

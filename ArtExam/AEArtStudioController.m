@@ -45,7 +45,7 @@
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
     m_collectionView.pullCollectionDelegate = self;
-    m_collectionView.backgroundColor = [UIColor whiteColor];
+    m_collectionView.backgroundColor = [UIColor colorWithRed:250.0 green:250.0 blue:250.0 alpha:0.9];
     [self registerCollectionCellClass];
     m_collectionView.dataSource = self;
     m_collectionView.delegate = self;
@@ -82,7 +82,7 @@
     [_adList getadList];
     [self draw_info_left];
     
-    m_pullDownView = [[PullDownVIew alloc]initWithFrame:CGRectMake(0, -330, self.view.frame.size.width, 100)];
+    m_pullDownView = [[PullDownVIew alloc]initWithFrame:CGRectMake(0, -330, self.view.frame.size.width, 100) : self];
     [self.view addSubview:m_pullDownView];
   
 }
@@ -111,19 +111,18 @@
 }
 -(void)draw_info_left
 {
-    UIButton *titleViewBtnLt = [[UIButton alloc]initWithFrame:CGRectMake(0, 145, self.view.frame.size.width/2, 71)];
+    UIButton *titleViewBtnLt = [[UIButton alloc]initWithFrame:CGRectMake(0, 145, self.view.frame.size.width/2-1, 71)];
     
-    titleViewBtnLt.backgroundColor = [UIColor clearColor];
+    titleViewBtnLt.backgroundColor = [UIColor whiteColor];
     
   
     
     [titleViewBtnLt addTarget:self action:@selector(jump_page_left) forControlEvents:UIControlEventTouchUpInside];
     
-    UILabel *m_UIbutText = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 150, 75, 40)];
-    m_UIbutText.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
-    m_UIbutText.text = @"画室资讯";
-    m_UIbutText.textColor = [UIColor blackColor];
-    
+    UILabel *m_UIbutTextLt = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 150, 75, 40)];
+    m_UIbutTextLt.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+    m_UIbutTextLt.text = @"画室资讯";
+    m_UIbutTextLt.textColor = [UIColor blackColor];
     
     UILabel *m_UIbutTextD = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 170, 75, 40)];
     m_UIbutTextD.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
@@ -134,7 +133,7 @@
     UIImageView *imageViewBtn = [[UIImageView alloc] initWithFrame:CGRectMake(15, 152, 55, 55)];
     imageViewBtn.image = [UIImage imageNamed:@"01"];
     [m_adView addSubview:titleViewBtnLt];
-    [m_adView addSubview:m_UIbutText];
+    [m_adView addSubview:m_UIbutTextLt];
     [m_adView addSubview:m_UIbutTextD];
     [m_adView addSubview:imageViewBtn];
     
@@ -142,7 +141,9 @@
 -(void)draw_info_right
 {
     
-    UIButton *titleViewBtnRf = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2, 145, self.view.frame.size.width/2, 71)];
+    UIButton *titleViewBtnRf = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+1, 145, self.view.frame.size.width/2, 71)];
+    titleViewBtnRf.backgroundColor = [UIColor whiteColor];
+    
     UILabel *m_UIbutTextRf = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width*3/4, 150, 75, 40)];
     m_UIbutTextRf.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     m_UIbutTextRf.text = @"画室省份";
@@ -164,7 +165,7 @@
     [m_adView addSubview:titleViewBtnRf];
     [m_adView addSubview: m_UIbutTextRf];
     [m_adView  addSubview:m_UIbutTextL];
-    [m_adView  addSubview:imageViewBtnLf];
+    [m_adView addSubview:imageViewBtnLf];
 
     
 
@@ -178,6 +179,7 @@
     [self.navigationController pushViewController:infoLeft animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
+
 //添加搜索按钮
 - (void)addNavigationRightItemSearch
 {
@@ -203,7 +205,7 @@
     [super initNavItem];
     [self titleView];
 }
-//标题菜单下拉
+//标题菜单下拉按钮
 - (void)titleView
 {
     
@@ -338,7 +340,7 @@
         {
             cell = [[AEStudioCollectionViewCell alloc]initWithFrame:CGRectMake(5, 0, self.view.frame.size.width/2-10, 130)];
         }
-       
+        cell. backgroundColor = [UIColor whiteColor];
         [cell setCellInfo:[m_arrStudioList objectAtIndex:(indexPath.row - 1)]];
         return cell;
     }

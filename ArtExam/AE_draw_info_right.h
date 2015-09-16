@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AE_draw_info_right : UIViewController
+#import "PullDownVIew.h"
+#import "PullTableView.h"
+#import "LoadMoreTableFooterView.h"
+@protocol  UICollectionViewDelegateDelegate;
+@interface AE_draw_info_right : UIViewController<UITableViewDelegate,UITableViewDataSource,PullTableViewDelegate>
 {
-//   事件一样参数不一样就行。
+        NSMutableArray *tabelData;
+//   事件一样,参数不一样就行。
+    PullTableView *m_tableView;
+
 }
+- (id)init :(NSString *)province_code;
 @end

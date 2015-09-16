@@ -9,10 +9,6 @@
 #import "AEArtStudioController.h"
 #import "AE_draw_info_left.h"
 #import "AE_draw_info_right.h"
-#import "Btn_TableView.h"
-
-
-
 
 @interface AEArtStudioController ()
 

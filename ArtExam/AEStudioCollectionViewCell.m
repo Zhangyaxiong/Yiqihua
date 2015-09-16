@@ -12,9 +12,9 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
     }
-    
     return self;
 }
 
@@ -38,6 +38,6 @@
     [self.imageview setImageWithURL:imgUrl  placeholderImage:nil];
     [self addSubview:self.imageview];
     
-    return TRUE;
+    return true ;
 }
 @end

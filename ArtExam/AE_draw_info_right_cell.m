@@ -33,11 +33,11 @@
         self.info.backgroundColor = [UIColor clearColor];
         [self addSubview:_info];
         
-        _readnumberprefix = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+10, 40, self.frame.size.width/3, self.frame.size.height)];
-        self.readnumberprefix.font = [UIFont boldSystemFontOfSize:12];
-        self.readnumberprefix.textColor = [UIColor grayColor];
-        self.readnumberprefix.backgroundColor = [UIColor clearColor];
-        [self addSubview:_readnumberprefix];
+        _peoplValue = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+10, 40, self.frame.size.width/3, self.frame.size.height)];
+        self. peoplValue.font = [UIFont boldSystemFontOfSize:12];
+        self. peoplValue.textColor = [UIColor grayColor];
+        self. peoplValue.backgroundColor = [UIColor clearColor];
+        [self addSubview: _peoplValue];
         
         _readnumber = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+50, 40, self.frame.size.width/3, self.frame.size.height)];
         self.readnumber.font = [UIFont boldSystemFontOfSize:12];
@@ -45,10 +45,10 @@
         self.readnumber.backgroundColor = [UIColor clearColor];
         [self addSubview:_readnumber];
         
-        _date = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*2/3+20, 40, self.frame.size.width/3, self.frame.size.height)];
-        self.date.font = [UIFont boldSystemFontOfSize:12];
-        self.date.textColor = [UIColor grayColor];
-        [self addSubview:_date];
+        _draw = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+10, 25, self.frame.size.width/3, self.frame.size.height)];
+        self.draw.font = [UIFont boldSystemFontOfSize:12];
+        self.draw.textColor = [UIColor grayColor];
+        [self addSubview:_draw];
         
     }
     return self;

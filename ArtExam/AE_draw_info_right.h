@@ -18,5 +18,6 @@
     PullTableView *m_tableView;
 
 }
+//跨文件传递参数（id）init方法每次都会首先运行的初始化方法
 - (id)init :(NSString *)province_code;
 @end

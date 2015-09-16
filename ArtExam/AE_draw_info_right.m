@@ -85,13 +85,13 @@
 }
 - (void)refreshTable
 {
-    m_tableView.pullTableIsRefreshing = NO;
+    m_tableView.pullTableIsRefreshing = YES;
     NSLog(@"refreshTableView");
 }
 - (void)loadMoreDataToTable
 {
     //    下拉内容
-    NSString *str_url = [NSString stringWithFormat:@"http://www.yiqihua.cn/artbox/phone/newsList.do?pageNumber=%d",tabelData.count/10+1];
+    NSString *str_url = [NSString stringWithFormat:@"http://www.yiqihua.cn/artbox/studio/qlist.do?locationId=%d",tabelData.count/10+1];
     NSDictionary *dic_all_info = [ParseJson parseJsonToDictionary:[NSURL URLWithString:str_url]];
     [tabelData addObjectsFromArray:[dic_all_info objectForKey:@"rows"]];
     [m_tableView reloadData];
@@ -114,10 +114,10 @@
    NSString *str_img_url = [NSString stringWithFormat:@"http://www.yiqihua.cn/artbox/phone/idownload.do?fileid=%@",[dic_info objectForKey:@"cover"]];
     NSURL *imgUrl = [NSURL URLWithString:str_img_url];
     [cell.ImageView setImageWithURL:imgUrl placeholderImage:nil];
-    cell.info.text = [dic_info objectForKey:@"title"];
-    cell.readnumberprefix.text = @"阅读量 ";
+    cell.info.text = [dic_info objectForKey:@"name"];
+    cell.peoplValue.text = @"人气值:";
     cell.readnumber.text = [[dic_info objectForKey:@"views"] stringValue];
-    cell.date.text = [dic_info objectForKey:@"cdateString"];
+    cell.draw.text = [dic_info objectForKey:@"type"];
     
     return cell;
 }

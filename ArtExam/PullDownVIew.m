@@ -76,7 +76,7 @@
     UIButton *labelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     //    按钮位置
     labelBtn.frame = CGRectMake(0, 0, 85, 30);
-    
+    //给按钮添加字体
     [labelBtn setTitle:[self.scrollviewArray objectAtIndex:[indexPath row]] forState:UIControlStateNormal];
     
     //    字体位置
@@ -111,9 +111,9 @@
 {
 //    设置按钮点击事件
     UIButton *button = (UIButton *)sender;
-   
+//   先给参数添加值：字典定义一个属性然后forkey一个值
     NSString *province_code = [m_dic_province_code objectForKey:[button titleForState:UIControlStateNormal]];
-    
+//    初始化转跳文件方法+参数
     AE_draw_info_right *infoLeft =[[AE_draw_info_right alloc]init : province_code];
     infoLeft.title =@"画室";
     m_studio_control.hidesBottomBarWhenPushed = YES;

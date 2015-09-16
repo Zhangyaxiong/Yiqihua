@@ -7,11 +7,11 @@
 //
 #import "PullDownVIew.h"
 #import <UIKit/UIKit.h>
-@class PullDownVIewUIView;
+
 @interface AE_draw_info_right_cell : UITableViewCell
 @property (nonatomic, retain) UIImageView *ImageView;
 @property (nonatomic, retain) UILabel *info;
-@property (nonatomic, retain) UILabel *readnumberprefix;
+@property (nonatomic, retain) UILabel *peoplValue;
 @property (nonatomic, retain) UILabel *readnumber;
-@property (nonatomic, retain) UILabel *date;
+@property (nonatomic, retain) UILabel *draw;
 @end

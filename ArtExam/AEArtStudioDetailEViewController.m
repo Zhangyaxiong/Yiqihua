@@ -18,6 +18,7 @@
     self = [super init];
     if (self) {
         m_dic_studio_info = [[NSDictionary alloc]initWithDictionary:studio_info];
+        
     }
     return self;
 }

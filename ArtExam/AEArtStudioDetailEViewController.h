@@ -20,5 +20,7 @@
     UIImageView *m_bottomBarBg;
 }
 - (id)initWithStudioInfoDictionary : (NSDictionary *)studio_info;
+
 - (IBAction)backAction:(id)sender;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 //#import "AEArtInformationViewCell.h"
-#import "AEArtStudioDetailEViewController.h"
+#import "AEStudioCollectionViewCell.h"
 #import "ParseJson.h"
 #import "AE_draw_info_right_cell.h"
 #import "DBNWebViewController.h"
@@ -125,16 +125,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [MobClick event:@"yqh026"];
-    NSDictionary *dic_info = [tabelData objectAtIndex:indexPath.row];
-    NSString *str_url = [NSString stringWithFormat:@"http://www.yiqihua.cn/artbox/phone/newsDetail.do?beanid=%@",[dic_info objectForKey:@"id"]];
-    DBNWebViewController *controller = [[DBNWebViewController alloc]initWithWebUrl:str_url];
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:controller animated:YES];
-    
+        NSDictionary *dic_info_tab = [tabelData objectAtIndex:indexPath.row];
+        AEArtStudioDetailEViewController *tableViewcell = [[AEArtStudioDetailEViewController alloc]initWithStudioInfoDictionary:dic_info_tab];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:tableViewcell animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
 }
 
 @end
+
+
+
+
 
 

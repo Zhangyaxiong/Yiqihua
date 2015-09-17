@@ -7,13 +7,14 @@
 //
 
 #import "AEStudioCollectionViewCell.h"
-
 @implementation AEStudioCollectionViewCell
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self)
     {
+        
     }
     return self;
 }
@@ -37,7 +38,7 @@
     NSURL *imgUrl = [NSURL URLWithString:str_img_url];
     [self.imageview setImageWithURL:imgUrl  placeholderImage:nil];
     [self addSubview:self.imageview];
-    
     return true ;
 }
+
 @end

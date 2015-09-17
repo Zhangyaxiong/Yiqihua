@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImageView+AFNetworking.h"
+#import "AE_draw_info_right.h"
 
-@interface AEStudioCollectionViewCell : UICollectionViewCell
+@interface AEStudioCollectionViewCell : UICollectionViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+{
+  
+}
 @property (nonatomic,retain) UILabel *studioNameLabel;
 @property (nonatomic,retain) UILabel *studioTypeLabel;
 @property (nonatomic,retain) UIImageView *imageview;

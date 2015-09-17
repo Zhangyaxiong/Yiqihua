@@ -8,8 +8,11 @@
 
 #import "DBNViewController.h"
 #import "PullTableView.h"
-
-@interface AEColleageViewController : DBNViewController
+#import "PullDownVIew.h"
+@interface AEColleageViewController : DBNViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+{
+    PullDownVIew *m_pullDownView;
+}
 
 @property (weak, nonatomic) IBOutlet PullTableView *colleageTableView;
 

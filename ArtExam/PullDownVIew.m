@@ -9,7 +9,7 @@
 #import "PullDownVIew.h"
 #import "AE_draw_info_right.h"
 #import "AEArtStudioController.h"
-#import "AE_draw_info_right.h"
+
 @interface PullDownVIew ()
 @end
 @implementation PullDownVIew

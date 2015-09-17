@@ -276,6 +276,7 @@
         [self showAdvertisInfo];
     }else{
         
+        
         [m_collectionView reloadData];
     }
     
@@ -390,6 +391,7 @@
     m_collectionView.pullTableIsRefreshing = NO;
     NSLog(@"refreshCollectionView");
 }
+//collectionview点击转跳事件（下部）
 - (void)loadMoreDataToCollectionView
 {
     NSString *str_url = [NSString stringWithFormat:@"http://www.yiqihua.cn/artbox/studio/qlist.do?pageNumber=%d",m_arrStudioList.count/10+1];

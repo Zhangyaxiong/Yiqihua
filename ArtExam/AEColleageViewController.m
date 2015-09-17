@@ -99,35 +99,45 @@
 
 - (void)titleView{
     
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
     titleView.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleView;
     
-    self.areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 123, 40)];
-    _areaLabel.backgroundColor = [UIColor clearColor];
-    _areaLabel.textColor = [UIColor whiteColor];
-    _areaLabel.textAlignment = NSTextAlignmentRight;
-    _areaLabel.font = [UIFont systemFontOfSize:20.f];
-    _areaLabel.text = @"全国";
-    [titleView addSubview:_areaLabel];
+    UIImageView *imageViewtitle = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2+40, 14, 13, 12)];
     
-//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(122, 16, 16, 10)];
-//    imgView.image = [UIImage imageNamed:@"find_pulldown.png"];
-//    [titleView addSubview:imgView];
-//    
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    btn.frame = CGRectMake(0, 0, titleView.frame.size.width, titleView.frame.size.height);
-//    [btn addTarget:self action:@selector(onClickChoiceArea:) forControlEvents:UIControlEventTouchUpInside];
-//    [titleView addSubview:btn];
+    imageViewtitle.image = [UIImage imageNamed:@"find_pulldown.png"];
     
-    //_locationStrAry = [NSArray arrayWithObjects:@"" count:(NSUInteger)]
-    
+    UILabel *areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-40, 0, 80, 40)];
+    areaLabel.backgroundColor = [UIColor clearColor];
+    areaLabel.textColor = [UIColor whiteColor];
+    areaLabel.textAlignment = NSTextAlignmentCenter;
+    areaLabel.font = [UIFont systemFontOfSize:20.f];
+    areaLabel.text = @"全国";
+    [titleView addSubview:imageViewtitle];
+    [titleView addSubview:areaLabel];
+    //给label添加一个点击事件手势
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(searchAction)];
+    [titleView addGestureRecognizer:tapGes];
     
 }
 
 
-- (void)searchAction{
-    
+- (void)searchAction
+{
+    NSLog(@"点击全国下拉");
+    [UIView animateWithDuration:0.2 animations:^{
+        if(m_pullDownView.frame.origin.y == -330)
+        {
+            CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            m_pullDownView.frame = frame;
+        }
+        else if(m_pullDownView.frame.origin.y == 0) {
+            CGRect frame = CGRectMake(0, -330, self.view.frame.size.width, 100);
+            m_pullDownView.frame = frame;
+        }
+        
+    }];
+
 }
 
 - (void)showAdvertisInfo{

@@ -88,6 +88,9 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [[DBNStatusView sharedDBNStatusView] showBusyStatus:@"加载中.."];
+    
+    m_pullDownView = [[PullDownVIew alloc]initWithFrame:CGRectMake(0, -330, self.view.frame.size.width, 100) : self];
+    [self.view addSubview:m_pullDownView];
 }
 
 - (void)initNavItem{
@@ -97,22 +100,23 @@
     [self titleView];
 }
 
-- (void)titleView{
+- (void)titleView
+{
     
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
     titleView.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleView;
     
-    UIImageView *imageViewtitle = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2+40, 14, 13, 12)];
+    UIImageView *imageViewtitle = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2+20, 14, 17, 12)];
     
     imageViewtitle.image = [UIImage imageNamed:@"find_pulldown.png"];
     
-    UILabel *areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-40, 0, 80, 40)];
+    UILabel *areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-47, 0, 80, 40)];
     areaLabel.backgroundColor = [UIColor clearColor];
     areaLabel.textColor = [UIColor whiteColor];
     areaLabel.textAlignment = NSTextAlignmentCenter;
     areaLabel.font = [UIFont systemFontOfSize:20.f];
-    areaLabel.text = @"全国";
+    areaLabel.text = @"全 国";
     [titleView addSubview:imageViewtitle];
     [titleView addSubview:areaLabel];
     //给label添加一个点击事件手势

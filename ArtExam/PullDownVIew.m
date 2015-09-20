@@ -5,28 +5,29 @@
 //  Created by 张亚雄 on 15/9/8.
 //  Copyright (c) 2015年 张亚雄. All rights reserved.
 //
-
+#import "AEColleageList.h"
 #import "PullDownVIew.h"
-#import "AE_draw_info_right.h"
+#import "AEArtVInformationControllerRight.h"
 #import "AEArtStudioController.h"
 
 @interface PullDownVIew ()
 @end
 @implementation PullDownVIew
 @synthesize scrollviewArray;
-- (id)initWithFrame:(CGRect)frame :(AEArtStudioController *)studio_control
+
+-(id)initWithFrame:(CGRect)frame :(UIViewController *)control
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        m_studio_control = studio_control;
-        
+        m_studio_control = control;
+      
         self.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.5];
         [self collectionView_pull];
         
         self.scrollviewArray =[[NSArray alloc]initWithObjects:@"北京市", @"天津市",@"上海市",@"重庆市",@"黑龙江",@"吉林省",@"辽宁省",@"内蒙古",@"河北省",@"山东省",@"江苏省",@"浙江省",@"福建省",@"台湾省",@"广东省",@"江西省",@"湖南省",@"安徽省",@"湖北省",@"河南省",@"山西省",@"宁夏",@"陕西省",@"甘肃省",@"青海省",@"四川省",@"贵州省",@"云南省",@"广西",@"西藏",@"新疆",nil];
         
-        NSArray *city_code = [[NSArray alloc]initWithObjects:@"110000", @"120000",@"310000",@"500000",@"230000",@"220000",@"210000",@"150000",@"130000",@"370000",@"320000",@"330000",@"350000",@"710000",@"440000",@"360000",@"110000",@"110000",@"110000",@"430000",@"140000",@"640000",@"610000",@"620000",@"630000",@"510000",@"520000",@"530000",@"450000",@"540000",@"650000", nil];
+        NSArray *city_code = [[NSArray alloc]initWithObjects:@"110000", @"120000",@"310000",@"500000",@"230000",@"220000",@"210000",@"150000",@"130000",@"370000",@"320000",@"330000",@"350000",@"710000",@"440000",@"360000",@"430000",@"340000",@"420000",@"410000",@"140000",@"640000",@"610000",@"620000",@"630000",@"510000",@"520000",@"530000",@"450000",@"540000",@"650000", nil];
         //添加字典
         m_dic_province_code = [[NSMutableDictionary alloc]initWithObjects:city_code forKeys: self.scrollviewArray];
         
@@ -34,6 +35,7 @@
     }
     return self;
 }
+
 -(void)collectionView_pull
 {
     //确定是水平滚动，还是垂直滚动
@@ -114,14 +116,30 @@
 //   先给参数添加值：字典定义一个属性然后forkey一个值
     NSString *province_code = [m_dic_province_code objectForKey:[button titleForState:UIControlStateNormal]];
 //    初始化转跳文件方法+参数
-    AE_draw_info_right *infoLeft =[[AE_draw_info_right alloc]init : province_code];
-    infoLeft.title =@"画室";
+//    AE_draw_info_right *infoLeft =[[AE_draw_info_right alloc]init : province_code];
+    
     m_studio_control.hidesBottomBarWhenPushed = YES;
         //把跳转事件和下拉回撤事件放到返回按钮上。
-    [m_studio_control tapSelectProvinceView];
-    [m_studio_control.navigationController pushViewController:infoLeft animated:true];
-    m_studio_control.hidesBottomBarWhenPushed = NO;
+    if ([m_studio_control isKindOfClass:[AEArtStudioController class]]) {
+        AEArtStudioController *studio = (AEArtStudioController *)m_studio_control;
+        [studio tapSelectProvinceView];
+        AEArtVInformationControllerRight *infoLeft =[[AEArtVInformationControllerRight alloc]init : province_code];
+        infoLeft.title =@"画室";
+        [m_studio_control.navigationController pushViewController:infoLeft animated:true];
+        m_studio_control.hidesBottomBarWhenPushed = NO;
+    }
+//    if ([m_studio_control isKindOfClass:[AEColleageViewController class]]) {
+//        
+//        AEColleageViewController *college = (AEColleageViewController *)m_studio_control;
+//        [college searchAction];
+//        [[AEColleageList  alloc]init : province_code];
+//       
+//        m_studio_control.hidesBottomBarWhenPushed = NO;
+//    }
+
+    
 }
+
 @end
 
 

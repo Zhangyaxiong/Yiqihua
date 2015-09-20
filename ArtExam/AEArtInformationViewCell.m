@@ -1,22 +1,20 @@
 //
-//  AE_draw_info_right_cell.m
+//  AEArtInformationViewCell.m
 //  ArtExam
 //
-//  Created by 张亚雄 on 15/9/15.
-//  Copyright (c) 2015年 张亚雄. All rights reserved.
+//  Created by renxuan on 15/8/20.
+//  Copyright (c) 2015年 renxuan. All rights reserved.
 //
 
-#import "AE_draw_info_right_cell.h"
+#import "AEArtInformationViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
-@implementation AE_draw_info_right_cell
+@implementation AEArtInformationViewCell
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib {
+    // Initialization code
 }
-*/
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -33,29 +31,30 @@
         self.info.backgroundColor = [UIColor clearColor];
         [self addSubview:_info];
         
-        _peoplValue = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+10, 40, self.frame.size.width/3, self.frame.size.height)];
-        self. peoplValue.font = [UIFont boldSystemFontOfSize:12];
-        self. peoplValue.textColor = [UIColor grayColor];
-        self. peoplValue.backgroundColor = [UIColor clearColor];
-        [self addSubview: _peoplValue];
-        
+        _readnumberprefix = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+10, 40, self.frame.size.width/3, self.frame.size.height)];
+        self.readnumberprefix.font = [UIFont boldSystemFontOfSize:12];
+        self.readnumberprefix.textColor = [UIColor grayColor];
+        self.readnumberprefix.backgroundColor = [UIColor clearColor];
+        [self addSubview:_readnumberprefix];
+
         _readnumber = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+50, 40, self.frame.size.width/3, self.frame.size.height)];
         self.readnumber.font = [UIFont boldSystemFontOfSize:12];
         self.readnumber.textColor = [UIColor grayColor];
         self.readnumber.backgroundColor = [UIColor clearColor];
         [self addSubview:_readnumber];
         
-        _draw = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/3+10, 25, self.frame.size.width/3, self.frame.size.height)];
-        self.draw.font = [UIFont boldSystemFontOfSize:12];
-        self.draw.textColor = [UIColor grayColor];
-        [self addSubview:_draw];
-        
+        _date = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*2/3+20, 40, self.frame.size.width/3, self.frame.size.height)];
+        self.date.font = [UIFont boldSystemFontOfSize:12];
+        self.date.textColor = [UIColor grayColor];
+        [self addSubview:_date];
     }
     return self;
 }
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
+
     // Configure the view for the selected state
 }
+
 @end

@@ -9,16 +9,16 @@
 //#import "AEArtInformationViewCell.h"
 #import "AEStudioCollectionViewCell.h"
 #import "ParseJson.h"
-#import "AE_draw_info_right_cell.h"
+#import "AEArtVInformationControllerRightcell.h"
 #import "DBNWebViewController.h"
 #import "LoadMoreTableFooterView.h"
-#import "AE_draw_info_right.h"
+#import "AEArtVInformationControllerRight.h"
 
-@interface AE_draw_info_right ()
+@interface AEArtVInformationControllerRight ()
 
 @end
 
-@implementation AE_draw_info_right
+@implementation AEArtVInformationControllerRight
 - (id)init :(NSString *)province_code
 {
     self = [super init];
@@ -104,10 +104,10 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    AE_draw_info_right_cell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    AEArtVInformationControllerRightcell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[AE_draw_info_right_cell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[AEArtVInformationControllerRightcell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     NSDictionary *dic_info = [tabelData objectAtIndex:indexPath.row];

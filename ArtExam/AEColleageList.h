@@ -5,11 +5,12 @@
 //  Created by dkllc on 14-9-20.
 //  Copyright (c) 2014年 dkllc. All rights reserved.
 //
-
+#import "PullDownVIew.h"
 #import "DBNDataEntries.h"
 #import "AEColleage.h"
+@protocol  UICollectionViewDelegateDelegate;
+@interface AEColleageList : DBNDataEntries<UITableViewDelegate,UITableViewDataSource>
 
-@interface AEColleageList : DBNDataEntries
 
 @property (nonatomic, strong) NSMutableArray *schoolList;
 @property (nonatomic, strong) AEColleage *collegeDetail;
@@ -19,7 +20,7 @@
 - (instancetype)initWithAPIName:(NSString *)apiName andDetailId:(NSString *)collegeId;
 - (instancetype)initWithAPIName:(NSString *)apiName andUserId:(int)userId;
 - (instancetype)initWithAPIName:(NSString *)apiName andLocationId:(int)locationId;
-
+- (id)init :(NSString *)province_code;
 - (void)getMostRecentSchools;
 - (void)getPrevSchools;
 

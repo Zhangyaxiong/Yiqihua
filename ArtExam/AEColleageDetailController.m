@@ -138,7 +138,7 @@ static const float paddingH = 3;
 }
 *
 
-/*
+
 //简介
 - (IBAction)onClickQuestion:(id)sender {
     

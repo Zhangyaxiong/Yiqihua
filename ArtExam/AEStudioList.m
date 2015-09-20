@@ -69,7 +69,8 @@
     }];
 
 }
-- (void)getMyPrevStudions:(int)uId{
+- (void)getMyPrevStudions:(int)uId
+ {
     if (_mark == 0) {
         return;
     }

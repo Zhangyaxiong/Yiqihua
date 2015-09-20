@@ -11,7 +11,7 @@
 #import "PullTableView.h"
 #import "LoadMoreTableFooterView.h"
 @protocol  UICollectionViewDelegateDelegate;
-@interface AE_draw_info_right : UIViewController<UITableViewDelegate,UITableViewDataSource,PullTableViewDelegate>
+@interface AEArtVInformationControllerRight : UIViewController<UITableViewDelegate,UITableViewDataSource,PullTableViewDelegate>
 {
         NSMutableArray *tabelData;//要传出去的数据
 //   事件一样,参数不一样就行。

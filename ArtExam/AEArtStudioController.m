@@ -7,8 +7,8 @@
 //
 
 #import "AEArtStudioController.h"
-#import "AE_draw_info_left.h"
-#import "AE_draw_info_right.h"
+#import "AEArtVInformationController.h"
+#import "AEArtVInformationControllerRight.h"
 
 @interface AEArtStudioController ()
 
@@ -76,7 +76,7 @@
     self.adList = [[AEAdList alloc] initWithAPIName:[DBNAPIList getAdListAPI] andFrom:0];
     _adList.delegate = self;
     [_adList getadList];
-    [self draw_info_left];
+   
     
     m_pullDownView = [[PullDownVIew alloc]initWithFrame:CGRectMake(0, -330, self.view.frame.size.width, 100) : self];
     [self.view addSubview:m_pullDownView];
@@ -100,41 +100,52 @@
     m_adTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(14, 121, self.view.frame.size.width-28, 21)];
     [m_adView addSubview:m_adTitleLabel];
    
-    
-    [self draw_info_left];
-    [self draw_info_right];
+//    左右BUT
+    [self addNavigationInformation];
+    [self draw_info_right_btn];
     
 }
--(void)draw_info_left
+-(void)addNavigationInformation
 {
     UIButton *titleViewBtnLt = [[UIButton alloc]initWithFrame:CGRectMake(0, 145, self.view.frame.size.width/2-1, 71)];
     
     titleViewBtnLt.backgroundColor = [UIColor whiteColor];
     
-  
+    [m_collectionView addSubview:titleViewBtnLt];
     
-    [titleViewBtnLt addTarget:self action:@selector(jump_page_left) forControlEvents:UIControlEventTouchUpInside];
+    [titleViewBtnLt addTarget:self action:@selector(jump_to_info) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *m_UIbutTextLt = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 150, 75, 40)];
     m_UIbutTextLt.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
     m_UIbutTextLt.text = @"画室资讯";
     m_UIbutTextLt.textColor = [UIColor blackColor];
     
-    UILabel *m_UIbutTextD = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 170, 75, 40)];
-    m_UIbutTextD.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
-    m_UIbutTextD.text = @"画室最新动态";
-    m_UIbutTextD.textColor = [UIColor grayColor];
+    UILabel *m_m_UIbutText = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, 170, 75, 40)];
+    m_m_UIbutText.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
+    m_m_UIbutText.text = @"画室最新动态";
+    m_m_UIbutText.textColor = [UIColor grayColor];
     
     //    图片
     UIImageView *imageViewBtn = [[UIImageView alloc] initWithFrame:CGRectMake(15, 152, 55, 55)];
     imageViewBtn.image = [UIImage imageNamed:@"01"];
     [m_adView addSubview:titleViewBtnLt];
     [m_adView addSubview:m_UIbutTextLt];
-    [m_adView addSubview:m_UIbutTextD];
+    [m_adView addSubview:m_m_UIbutText];
     [m_adView addSubview:imageViewBtn];
-    
 }
--(void)draw_info_right
+//转跳页面标题和转跳事件
+-(void)jump_to_info
+{
+    AEArtVInformationController *controller =[[AEArtVInformationController alloc]init];
+    controller.title =@"画室资讯";
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller  animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
+-(void)draw_info_right_btn
 {
     
     UIButton *titleViewBtnRf = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/2+1, 145, self.view.frame.size.width/2, 71)];
@@ -165,15 +176,6 @@
 
     
 
-}
-//转跳页面标题和转跳事件
--(void)jump_page_left
-{
-    AE_draw_info_left *infoLeft =[[AE_draw_info_left alloc]init];
-    infoLeft.title =@"画室资讯";
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:infoLeft animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
 }
 
 //添加搜索按钮

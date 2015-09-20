@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 @class AEArtStudioController;
-
+@class AEColleageViewController;
 @interface PullDownVIew : UIView<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
-    AEArtStudioController *m_studio_control;
     NSDictionary *m_dic_province_code;
+  
+    UIViewController *m_studio_control;
 }
 
 @property (strong, nonatomic)UICollectionView *collectionView;
 @property (nonatomic,strong) NSString *cellString;
 @property (nonatomic,strong) NSArray *scrollviewArray;
 
--(id)initWithFrame:(CGRect)frame :(AEArtStudioController *)studio_control;
-
+-(id)initWithFrame:(CGRect)frame :(UIViewController *)control;
 @end

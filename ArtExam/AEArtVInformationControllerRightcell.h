@@ -8,7 +8,7 @@
 #import "PullDownVIew.h"
 #import <UIKit/UIKit.h>
 
-@interface AE_draw_info_right_cell : UITableViewCell
+@interface AEArtVInformationControllerRightcell : UITableViewCell
 @property (nonatomic, retain) UIImageView *ImageView;
 @property (nonatomic, retain) UILabel *info;
 @property (nonatomic, retain) UILabel *peoplValue;

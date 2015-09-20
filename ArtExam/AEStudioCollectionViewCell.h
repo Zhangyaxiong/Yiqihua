@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImageView+AFNetworking.h"
-#import "AE_draw_info_right.h"
+#import "AEArtVInformationControllerRight.h"
 
 @interface AEStudioCollectionViewCell : UICollectionViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {

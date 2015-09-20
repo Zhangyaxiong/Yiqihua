@@ -203,11 +203,13 @@
 		25EC9A2819CDB1A60071C8EB /* AEWorkGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EC9A2719CDB1A60071C8EB /* AEWorkGridCell.m */; };
 		3A7645671B5A4FF700054F97 /* AEExamNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7645651B5A4FF700054F97 /* AEExamNewsCell.m */; };
 		3A7645681B5A4FF700054F97 /* AEExamNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7645661B5A4FF700054F97 /* AEExamNewsCell.xib */; };
-		69964B5E1BA15C2E00F2982A /* ParseDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 69964B5D1BA15C2E00F2982A /* ParseDown.m */; };
-		69BF470C1B85A1D300734C60 /* AE_draw_info_left.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */; };
-		69C044A91BA6A850006BB61C /* AE_draw_info_right.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C044A81BA6A850006BB61C /* AE_draw_info_right.m */; };
-		69C28CFF1BA7AE55007B0ADC /* AE_draw_info_right_cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C28CFE1BA7AE55007B0ADC /* AE_draw_info_right_cell.m */; };
+		69919AA91BAEF45C00C67BC2 /* AEArtInformationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69919AA81BAEF45C00C67BC2 /* AEArtInformationViewCell.m */; };
+		69919AAC1BAEF6EA00C67BC2 /* AEArtInformationDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69919AAB1BAEF6EA00C67BC2 /* AEArtInformationDetailController.m */; };
+		69BF470C1B85A1D300734C60 /* AEArtVInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BF470B1B85A1D300734C60 /* AEArtVInformationController.m */; };
+		69C044A91BA6A850006BB61C /* AEArtVInformationControllerRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C044A81BA6A850006BB61C /* AEArtVInformationControllerRight.m */; };
+		69C28CFF1BA7AE55007B0ADC /* AEArtVInformationControllerRightcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C28CFE1BA7AE55007B0ADC /* AEArtVInformationControllerRightcell.m */; };
 		69C6C4C51B9EABAC00494386 /* PullDownVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C6C4C41B9EABAC00494386 /* PullDownVIew.m */; };
+		69EE41DF1BAC06F200ED833F /* AEColleageViewControllerJumpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EE41DE1BAC06F200ED833F /* AEColleageViewControllerJumpTableViewController.m */; };
 		69FE5A671B846BF1007200F3 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 69FE5A661B846BF1007200F3 /* 01.png */; };
 		69FE5A691B846BF5007200F3 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 69FE5A681B846BF5007200F3 /* 02.png */; };
 		74C8A1A61B78A0CE00779291 /* tab-studio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C8A1A51B78A0CE00779291 /* tab-studio@2x.png */; };
@@ -796,16 +798,20 @@
 		3A7645641B5A4FF700054F97 /* AEExamNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEExamNewsCell.h; sourceTree = "<group>"; };
 		3A7645651B5A4FF700054F97 /* AEExamNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEExamNewsCell.m; sourceTree = "<group>"; };
 		3A7645661B5A4FF700054F97 /* AEExamNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AEExamNewsCell.xib; sourceTree = "<group>"; };
-		69964B5C1BA15C2E00F2982A /* ParseDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseDown.h; sourceTree = "<group>"; };
-		69964B5D1BA15C2E00F2982A /* ParseDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDown.m; sourceTree = "<group>"; };
-		69BF470A1B85A1D300734C60 /* AE_draw_info_left.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AE_draw_info_left.h; sourceTree = "<group>"; };
-		69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AE_draw_info_left.m; sourceTree = "<group>"; };
-		69C044A71BA6A850006BB61C /* AE_draw_info_right.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AE_draw_info_right.h; sourceTree = "<group>"; };
-		69C044A81BA6A850006BB61C /* AE_draw_info_right.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AE_draw_info_right.m; sourceTree = "<group>"; };
-		69C28CFD1BA7AE55007B0ADC /* AE_draw_info_right_cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AE_draw_info_right_cell.h; sourceTree = "<group>"; };
-		69C28CFE1BA7AE55007B0ADC /* AE_draw_info_right_cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AE_draw_info_right_cell.m; sourceTree = "<group>"; };
+		69919AA71BAEF44A00C67BC2 /* AEArtInformationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEArtInformationViewCell.h; sourceTree = "<group>"; };
+		69919AA81BAEF45C00C67BC2 /* AEArtInformationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEArtInformationViewCell.m; sourceTree = "<group>"; };
+		69919AAA1BAEF6D800C67BC2 /* AEArtInformationDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEArtInformationDetailController.h; sourceTree = "<group>"; };
+		69919AAB1BAEF6EA00C67BC2 /* AEArtInformationDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEArtInformationDetailController.m; sourceTree = "<group>"; };
+		69BF470A1B85A1D300734C60 /* AEArtVInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEArtVInformationController.h; sourceTree = "<group>"; };
+		69BF470B1B85A1D300734C60 /* AEArtVInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEArtVInformationController.m; sourceTree = "<group>"; };
+		69C044A71BA6A850006BB61C /* AEArtVInformationControllerRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEArtVInformationControllerRight.h; sourceTree = "<group>"; };
+		69C044A81BA6A850006BB61C /* AEArtVInformationControllerRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEArtVInformationControllerRight.m; sourceTree = "<group>"; };
+		69C28CFD1BA7AE55007B0ADC /* AEArtVInformationControllerRightcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEArtVInformationControllerRightcell.h; sourceTree = "<group>"; };
+		69C28CFE1BA7AE55007B0ADC /* AEArtVInformationControllerRightcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEArtVInformationControllerRightcell.m; sourceTree = "<group>"; };
 		69C6C4C31B9EABAC00494386 /* PullDownVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownVIew.h; sourceTree = "<group>"; };
 		69C6C4C41B9EABAC00494386 /* PullDownVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownVIew.m; sourceTree = "<group>"; };
+		69EE41DD1BAC06F200ED833F /* AEColleageViewControllerJumpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEColleageViewControllerJumpTableViewController.h; sourceTree = "<group>"; };
+		69EE41DE1BAC06F200ED833F /* AEColleageViewControllerJumpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEColleageViewControllerJumpTableViewController.m; sourceTree = "<group>"; };
 		69FE5A661B846BF1007200F3 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01.png; path = "../../照片/01.png"; sourceTree = "<group>"; };
 		69FE5A681B846BF5007200F3 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 02.png; path = "../../照片/02.png"; sourceTree = "<group>"; };
 		74C8A1A21B74BBF600779291 /* AEArtStudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEArtStudioController.h; sourceTree = "<group>"; };
@@ -1917,6 +1923,8 @@
 				87F907191B52B3B4007134A5 /* AEExamNewsViewController.xib */,
 				250FB54019C0AF5100ECB139 /* AEColleageViewController.h */,
 				250FB54119C0AF5100ECB139 /* AEColleageViewController.m */,
+				69EE41DD1BAC06F200ED833F /* AEColleageViewControllerJumpTableViewController.h */,
+				69EE41DE1BAC06F200ED833F /* AEColleageViewControllerJumpTableViewController.m */,
 				250FB54219C0AF5100ECB139 /* AEColleageViewController.xib */,
 				250FB53B19C0AECD00ECB139 /* AEStudioViewController.h */,
 				250FB53C19C0AECD00ECB139 /* AEStudioViewController.m */,
@@ -2114,8 +2122,6 @@
 			children = (
 				69C6C4C31B9EABAC00494386 /* PullDownVIew.h */,
 				69C6C4C41B9EABAC00494386 /* PullDownVIew.m */,
-				69964B5C1BA15C2E00F2982A /* ParseDown.h */,
-				69964B5D1BA15C2E00F2982A /* ParseDown.m */,
 			);
 			name = ExpandBtn;
 			sourceTree = "<group>";
@@ -2132,12 +2138,16 @@
 				74C8A1AB1B7AE28400779291 /* AEStudioCollectionViewCell.m */,
 				74C8A1B51B7CC47B00779291 /* AEArtStudioDetailEViewController.h */,
 				74C8A1B61B7CC47B00779291 /* AEArtStudioDetailEViewController.m */,
-				69BF470A1B85A1D300734C60 /* AE_draw_info_left.h */,
-				69BF470B1B85A1D300734C60 /* AE_draw_info_left.m */,
-				69C044A71BA6A850006BB61C /* AE_draw_info_right.h */,
-				69C044A81BA6A850006BB61C /* AE_draw_info_right.m */,
-				69C28CFD1BA7AE55007B0ADC /* AE_draw_info_right_cell.h */,
-				69C28CFE1BA7AE55007B0ADC /* AE_draw_info_right_cell.m */,
+				69BF470A1B85A1D300734C60 /* AEArtVInformationController.h */,
+				69BF470B1B85A1D300734C60 /* AEArtVInformationController.m */,
+				69919AA71BAEF44A00C67BC2 /* AEArtInformationViewCell.h */,
+				69919AA81BAEF45C00C67BC2 /* AEArtInformationViewCell.m */,
+				69C044A71BA6A850006BB61C /* AEArtVInformationControllerRight.h */,
+				69C044A81BA6A850006BB61C /* AEArtVInformationControllerRight.m */,
+				69C28CFD1BA7AE55007B0ADC /* AEArtVInformationControllerRightcell.h */,
+				69C28CFE1BA7AE55007B0ADC /* AEArtVInformationControllerRightcell.m */,
+				69919AAA1BAEF6D800C67BC2 /* AEArtInformationDetailController.h */,
+				69919AAB1BAEF6EA00C67BC2 /* AEArtInformationDetailController.m */,
 				69FE5A661B846BF1007200F3 /* 01.png */,
 				69FE5A681B846BF5007200F3 /* 02.png */,
 			);
@@ -2678,6 +2688,7 @@
 				8F88400019C1E4F4006D15D1 /* AEColleageDetailController.m in Sources */,
 				25EC99E819CD17190071C8EB /* UIViewController+MMDrawerController.m in Sources */,
 				25E145E419B5DDFD00F99702 /* UIView+GMGridViewAdditions.m in Sources */,
+				69919AAC1BAEF6EA00C67BC2 /* AEArtInformationDetailController.m in Sources */,
 				C06DABE819FD5EA00032F5C1 /* AECircleListHeaderCell.m in Sources */,
 				25E1460D19B606B700F99702 /* NSString+MD5.m in Sources */,
 				25E145EC19B5DDFD00F99702 /* SBJsonStreamParserAdapter.m in Sources */,
@@ -2702,7 +2713,7 @@
 				25762CBE19C48A6200C7E7D8 /* QBAssetsCollectionOverlayView.m in Sources */,
 				25E145D019B5DDFD00F99702 /* AFImageRequestOperation.m in Sources */,
 				8F7BCF3C19D5AA9D001EA795 /* AEAreaController.m in Sources */,
-				69C28CFF1BA7AE55007B0ADC /* AE_draw_info_right_cell.m in Sources */,
+				69C28CFF1BA7AE55007B0ADC /* AEArtVInformationControllerRightcell.m in Sources */,
 				25E145D319B5DDFD00F99702 /* AFPropertyListRequestOperation.m in Sources */,
 				25CC4DD619CF01F000F6D81E /* DBNWebViewController.m in Sources */,
 				25C41C2719C73AE9005B7E16 /* AEPicGridViewCell.m in Sources */,
@@ -2751,6 +2762,7 @@
 				87135FBC1B49039900D6A340 /* AEMatriculateList.m in Sources */,
 				25CC4DFA19CF1B6500F6D81E /* PPiFlatSegmentedControl.m in Sources */,
 				25762CED19C58FB500C7E7D8 /* DBNPhotoImport.mm in Sources */,
+				69919AA91BAEF45C00C67BC2 /* AEArtInformationViewCell.m in Sources */,
 				25E1461519B6083B00F99702 /* DBNCheckNewVersion.mm in Sources */,
 				25762CF619C5C8DE00C7E7D8 /* AETopicList.m in Sources */,
 				25762CF019C5930E00C7E7D8 /* UIPlaceHolderTextView.m in Sources */,
@@ -2763,7 +2775,6 @@
 				8F6F11FE19CDCCC50013014D /* AEHotMajorList.m in Sources */,
 				25E1463719B60AF300F99702 /* AETopicListController.m in Sources */,
 				8F883FEB19C1A5A9006D15D1 /* AETeachersDetailController.m in Sources */,
-				69964B5E1BA15C2E00F2982A /* ParseDown.m in Sources */,
 				250FB52519C0910E00ECB139 /* AETopicListTableView.m in Sources */,
 				250FB53319C09C9F00ECB139 /* AETopicDetailsController.m in Sources */,
 				25E1461719B6083B00F99702 /* DBNImageUploadItem.m in Sources */,
@@ -2774,6 +2785,7 @@
 				25EC9A1A19CD9DB80071C8EB /* AEWorkSetDetailsController.m in Sources */,
 				25CC4DCF19CED28400F6D81E /* M80AttributedLabel.m in Sources */,
 				25CC4DAE19CEA92F00F6D81E /* AEMyCollectionColleagesController.m in Sources */,
+				69EE41DF1BAC06F200ED833F /* AEColleageViewControllerJumpTableViewController.m in Sources */,
 				25762C8919C3EF2E00C7E7D8 /* DBNImageView.m in Sources */,
 				25CC4DBE19CEAA1C00F6D81E /* AEShowColleagePicsController.m in Sources */,
 				25EC9A0319CD8B310071C8EB /* AECircleTopicListController.m in Sources */,
@@ -2785,7 +2797,7 @@
 				25EC99FE19CD34300071C8EB /* AECircleCell.m in Sources */,
 				25E145E319B5DDFD00F99702 /* UIGestureRecognizer+GMGridViewAdditions.m in Sources */,
 				25762CA519C435A300C7E7D8 /* AEQuestion.m in Sources */,
-				69BF470C1B85A1D300734C60 /* AE_draw_info_left.m in Sources */,
+				69BF470C1B85A1D300734C60 /* AEArtVInformationController.m in Sources */,
 				8FF9C93619B9C547004830C7 /* MessageInterceptor.m in Sources */,
 				25B2221D19C8822D00D97FFD /* AECommentList.m in Sources */,
 				25EC99E519CD17190071C8EB /* MMDrawerController.m in Sources */,
@@ -2833,7 +2845,7 @@
 				250FB55D19C1DBF100ECB139 /* AEStudioCell.m in Sources */,
 				FCA0BA5F1A456A2900C745A8 /* NSString+Helper.m in Sources */,
 				25EC9A2219CDAABE0071C8EB /* AEWorkSet.m in Sources */,
-				69C044A91BA6A850006BB61C /* AE_draw_info_right.m in Sources */,
+				69C044A91BA6A850006BB61C /* AEArtVInformationControllerRight.m in Sources */,
 				25CC4DF919CF1B6500F6D81E /* UIButton+PPiAwesome.m in Sources */,
 				74C8A1B41B7B44FD00779291 /* PullCollectionView.m in Sources */,
 				8F7BCF4019D5BBE0001EA795 /* AEAreaView.m in Sources */,

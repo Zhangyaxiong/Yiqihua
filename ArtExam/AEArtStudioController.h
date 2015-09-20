@@ -10,13 +10,8 @@
 #import "AEColleageViewController.h"
 #import "AEImageTitleCell.h"
 #import "AEColleageDetailController.h"
-//#import "AEQuestionBankAndHotController.h"
-//#import "AEHotMajorController.h"
-//#import "AEColleageList.h"
 #import "DBNImageView.h"
 #import "AESearchViewController.h"
-//#import "AEAreaController.h"
-//#import "AEAreaView.h"
 #import "AEAdList.h"
 #import "DBNUtils.h"
 #import "DBNStatusView.h"
@@ -33,7 +28,6 @@
     UIScrollView *m_picScrollView;
     UIView *m_adView;
     UILabel *m_adTitleLabel;
-   
     NSMutableArray *m_arrStudioList;
     UIPageControl *m_pageControl;
     PullCollectionView *m_collectionView;
